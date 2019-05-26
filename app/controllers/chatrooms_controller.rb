@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
 
+  before_action :get_chatroom, only: [:show]
   def index
     @chatrooms = Chatroom.all
     render json: @chatrooms
@@ -19,5 +20,9 @@ class ChatroomsController < ApplicationController
   end
 
   private
+
+  def get_chatroom
+    @chatroom = Chatroom.find(params[:id])
+  end
 
 end
