@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authenticate_user
+  # before_action :authenticate_user
   # Needs to be placed in before action for certain controllers
   def authenticate_user
     if !current_user
