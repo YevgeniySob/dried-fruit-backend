@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::API
   # before_action :authenticate_user
   # Needs to be placed in before action for certain controllers
-  def authenticate_user
-    if !current_user
-      render json: {error: "Not Authenticated"}, status: 401
-    end
-  end
+  # def authenticate_user
+  #   if !current_user
+  #     render json: {error: "Not Authenticated"}, status: 401
+  #   end
+  # end
 
   def issue_token(payload)
     JWT.encode(payload, "secret", 'HS256')
