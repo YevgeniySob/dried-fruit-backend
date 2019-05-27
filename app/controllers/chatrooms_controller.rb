@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
-
-  before_action :get_chatroom, only: [:show]
+  # before_action :get_chatroom, only: [:show]
+  # skip_before_action :authorized, only: [:index]
   def index
     @chatrooms = Chatroom.all
     render json: @chatrooms

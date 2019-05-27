@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
   post '/auth', to: 'auth#create'
   get '/current_user', to: 'auth#show'
+  get '/profile', to: 'users#profile'
   mount ActionCable.server => '/cable'
 
 end
