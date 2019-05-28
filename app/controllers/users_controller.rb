@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], password: params[:password], image: params[:image])
-
     if @user.save
       render json: @user
     else
@@ -18,4 +17,9 @@ class UsersController < ApplicationController
     end
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :username, :password, :image)
+  end
 end

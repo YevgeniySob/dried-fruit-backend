@@ -11,8 +11,10 @@ require 'faker'
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Internet.username, password: "123", image:'https://picsum.photos/id/237/200/300')
 end
 
+User.create(username: "yev", password: "123")
+
 Chatroom.create(name: 'TEST')
 
 5.times do
-  Message.create(content: Faker::Lorem.sentence, user_id: rand(User.first.id..User.last.id), chatroom_id: 1)
+  Message.create(content: Faker::Lorem.sentence, user_id: rand(User.first.id..User.last.id), chatroom_id: 1, likes: 0)
 end
